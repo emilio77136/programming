@@ -1,5 +1,5 @@
 //Sort in Ascending Order: Implement a function to sort an array in ascending order. 
-//HINT: Research Bubble sort
+//HINT Research Bubble sort
 
 
 #include <iostream>
