@@ -14,6 +14,7 @@ int arraysize = 5;
 int array[arraysize] = {1,2,3,4,5};
 
 int r = sumXd(array, arraysize);
+cout << "Sum: " << r;
 
     return 0;
 }
