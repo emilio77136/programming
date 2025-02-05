@@ -12,7 +12,7 @@ int arraysize = 5;
 int array[arraysize] = {1,2,3,4,5};
 
     int r = averageXd(array, arraysize);
-    cout << "Average: " << r;
+    cout << "Average is: " << r;
 
     return 0;
 }
