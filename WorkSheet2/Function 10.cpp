@@ -9,8 +9,8 @@ void AscendingXd(int array[], int arraysize);
 
 int main(){
 
-int arraysize = 6;
-int array[arraysize] = {3,6,1,5,2,4};
+int arraysize = 5;
+int array[arraysize] = {3,1,5,2,4};
 
     AscendingXd(array, arraysize);
 
@@ -20,7 +20,6 @@ int array[arraysize] = {3,6,1,5,2,4};
 void AscendingXd(int array[], int arraysize){
 
     int temp = 0;
-
     for(int i = 0; i < arraysize - 1; i++){
         for(int j = 0; j < arraysize - 1; j++){
             if(array[j] > array[j + 1]){

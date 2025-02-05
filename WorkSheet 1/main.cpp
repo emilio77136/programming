@@ -15,7 +15,7 @@ void sortArray(int array[], int arraysize);
 void insertElement(int array[], int arraysize);
 void deleteElement(int array[], int arraysize);
 int numberOfEven(int array[], int aarraysize);
-
+void mergeArray(int array[], int arraysize);
 
 int main() {
     int arraysize = 5;
@@ -44,22 +44,18 @@ int main() {
     //calculateSum(array, arraysize);
     //findLargestNumber(array, arraysize);
     //countEvenNumbers(array, arraysize);
-    
     //resetOddNumbers(array, arraysize);
     //countOccurence(array, arraysize, target);
     //copyArray(array, arraysize);
     //sortArray(array, arraysize);
     //insertElement(array, arraysize);
     //deleteElement(array, arraysize);
-    int r = numberOfEven(array, arraysize);
-    cout << "Even count : " << r << endl; 
-    
-    calculateAverage(array, arraysize);
-    
-    findTarget(array, arraysize, target);
+    //int r = numberOfEven(array, arraysize);
+    //cout << "Even count : " << r << endl; 
+    //calculateAverage(array, arraysize);
+    // findTarget(array, arraysize, target);
+    mergeArray(array, arraysize);
 
-    cout << "hi";
-    cout << "hello";
 
     return 0;
 }
@@ -263,10 +259,9 @@ void deleteElement(int array[], int arraysize){
 }   
 
 
-//hellog
-///hi sanfasf
-
-
+void mergeArray(int array[], int arraysize){
+    
+}
 
 
 
