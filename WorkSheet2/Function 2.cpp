@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-int averageXd(int array[], int arraysize);
+double averageXd(int array[], int arraysize);
 
 int main(){
 
@@ -17,10 +17,10 @@ int array[arraysize] = {1,2,3,4,5};
     return 0;
 }
 
-int averageXd(int array[], int arraysize){
+double averageXd(int array[], int arraysize){
 
     int sum = 0;
-    int average = 0;
+    double average = 0;
 
     for(int i = 0; i < arraysize; i++){
         sum += array[i];
