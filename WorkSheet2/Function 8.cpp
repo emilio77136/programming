@@ -21,19 +21,13 @@ cout << r;
     return 0;
 }
 
-int searchXd(int array[], int arraysize, int target){
-
-    int index = 0;
-
-    for(int i = 0; i < arraysize; i++){
-        if(array[i] == target){
+int searchXd(int array[], int arraysize, int target) {
+    
+    
+    for (int i = 0; i < arraysize; i++) {
+        if (array[i] == target) {
             return i;
-            break;
-        }else{
-            return -1;
         }
     }
-
-    
-
+    return -1; 
 }
