@@ -10,7 +10,7 @@ void sortedXd(int array[], int arraysize);
 int main(){
 
     int arraysize = 5;
-    int array[] = {1,2,3,4,5};
+    int array[] = {0,2,8,4,5};
 
     sortedXd(array, arraysize);
 
@@ -19,20 +19,18 @@ int main(){
 
 void sortedXd(int array[], int arraysize){
     
-    bool sorted;
+    bool sorted = true;
 
-    for(int i = 0; i < arraysize; i++){
+    for(int i = 0; i < arraysize - 1; i++){
         if(array[i] > array[i + 1]){
-            sorted = true;
-        }else{
-        sorted = false;
-        break;
-      }
+            sorted = false;
+            break;
+        }
     }
     
-    if(sorted){
-        cout << "Sorted";
-    }else{
+    if(!sorted){
         cout << "Not Sorted";
+    }else{
+        cout << "Sorted";
     }
 }
