@@ -19,4 +19,20 @@ int main(){
 
 void sortedXd(int array[], int arraysize){
     
+    bool sorted;
+
+    for(int i = 0; i < arraysize; i++){
+        if(array[i] > array[i + 1]){
+            sorted = true;
+        }else{
+        sorted = false;
+        break;
+      }
+    }
+    
+    if(sorted){
+        cout << "Sorted";
+    }else{
+        cout << "Not Sorted";
+    }
 }
