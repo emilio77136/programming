@@ -30,17 +30,17 @@ int main(){
     
     //cout << "Sum: " << sumXd(array, arraysize);
     //cout << "Average: " << averageXd(array, arraysize);
-    cout << "Largest: " << largestXd(array, arraysize);
-    //smallestXd(array, arraysize);
+    //cout << "Largest: " << largestXd(array, arraysize);
+    //cout << "Smallest: " << smallestXd(array, arraysize);
     //reverseXd(array, arraysize);
-    //evensXd(array, arraysize); 
-    //oddsXd(array, arraysize);
-    //searchXd(array, arraysize, target);
+    //cout << "Evens: " << evensXd(array, arraysize); 
+    //cout << " Odds: " << oddsXd(array, arraysize);
+    //cout << "Index: " << searchXd(array, arraysize, target);
     //replaceXd(array, arraysize, initalVal, newVal);
     //AscendingXd(array, arraysize);
     //DecendingXd(array, arraysize);
     //sortedXd(array, arraysize);
-    //duplicatesXd(array, arraysize);
+    //duplicatesXd(array, arraysize); //*****************errors*************  */
     //leftXd(array, arraysize);
     //rightXd(array, arraysize);
 
@@ -213,7 +213,7 @@ void sortedXd(int array[], int arraysize){
     bool sorted = true;
 
     for(int i = 0; i < arraysize - 1; i++){
-        if(array[i] > array[i + 1]){
+        if(array[i] >= array[i + 1]){
             sorted = false;
             break;
         }
