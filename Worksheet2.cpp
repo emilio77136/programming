@@ -20,6 +20,7 @@ void mergeXd(int array[], int array1[], int mergedArray[], int arraysize);
 void splitXd(int array[], int arraysize);
 int modeXd(int array[], int arraysize);
 int secondXd(int array[], int arraysize);
+void cumulativeSumXd(int array[], int arraysize);
 
 
 int main(){
@@ -53,6 +54,7 @@ int main(){
     //splitXd(array, arraysize);
     //cout << "Mode: " << modeXd(array, arraysize);
     //cout << " Second largest: " << secondXd(array, arraysize);
+    cumulativeSumXd(array, arraysize);
 
     return 0;
 }
@@ -367,4 +369,23 @@ int secondXd(int array[], int arraysize){
 
 
     return secondLargest;
+}
+
+void cumulativeSumXd(int array[], int arraysize){
+
+    int sum = 0;
+
+    for(int i = 1; i < arraysize; i++){
+        sum = 0;
+        for(int j = 0; j <= i; j++){
+            sum += array[j];
+            
+        }
+        array[i] = sum;
+        
+    }
+
+    for(int i = 0 ; i < arraysize; i++){
+        cout << array[i] << " ";
+    }
 }
