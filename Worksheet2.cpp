@@ -16,12 +16,15 @@ void sortedXd(int array[], int arraysize);
 void duplicatesXd(int array[], int arraysize);
 void leftXd(int array[], int arraysize);
 void rightXd(int array[], int arraysize);
+void mergeXd(int array[], int array1[], int mergedArray[], int arraysize);
 
 
 int main(){
 
     int arraysize = 10;
     int array[arraysize] = {1,3,6,3,1,3,6,8,3,3};
+    int array2[arraysize] = {3,7,3,7,2,1,9,0,7,4};
+    int mergedArray[] = {};
     int target = 8;
     int initalVal = 3;
     int newVal = 0;
@@ -43,7 +46,7 @@ int main(){
     //duplicatesXd(array, arraysize); //*****************errors*************  */
     //leftXd(array, arraysize);
     //rightXd(array, arraysize);
-
+    //mergeXd(array, array2, mergedArray, arraysize);
 
 
     return 0;
@@ -73,7 +76,6 @@ double averageXd(int array[], int arraysize){
 
     return average;
 }
-
 
 int largestXd(int array[], int arraysize){
 
@@ -115,7 +117,6 @@ void reverseXd(int array[], int arraysize){
         cout << temp[i] << " ";
     }
 }
-
 
 int evensXd(int array[], int arraysize){
 
@@ -246,7 +247,6 @@ void duplicatesXd(int array[], int arraysize){
     }
 }
 
-
 void leftXd(int array[], int arraysize){
 
     int last = array[0];
@@ -262,7 +262,6 @@ void leftXd(int array[], int arraysize){
     }
 }
 
-
 void rightXd(int array[], int arraysize){
 
     int last = array[arraysize - 1];
@@ -277,3 +276,23 @@ void rightXd(int array[], int arraysize){
         cout << array[i] << " ";
     }
 }
+
+void mergeXd(int array[], int array2[], int mergedArray[], int arraysize){
+    
+    int arraysize2 = 0;
+
+    for(int i = 0; i < arraysize; i++){
+        mergedArray[i] = array[i];
+        arraysize2++;
+    }
+
+    for(int i = 0; i < arraysize; i++){
+        mergedArray[arraysize2] = array2[i];
+        arraysize2++;
+    }
+
+    for(int i = 0 ; i < arraysize2; i++){
+        cout << mergedArray[i] << " ";
+    }
+}
+
