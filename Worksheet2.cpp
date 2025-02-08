@@ -17,6 +17,7 @@ void duplicatesXd(int array[], int arraysize);
 void leftXd(int array[], int arraysize);
 void rightXd(int array[], int arraysize);
 void mergeXd(int array[], int array1[], int mergedArray[], int arraysize);
+void splitXd(int array[], int arraysize);
 
 
 int main(){
@@ -47,6 +48,7 @@ int main(){
     //leftXd(array, arraysize);
     //rightXd(array, arraysize);
     //mergeXd(array, array2, mergedArray, arraysize);
+    splitXd(array, arraysize);
 
 
     return 0;
@@ -293,6 +295,33 @@ void mergeXd(int array[], int array2[], int mergedArray[], int arraysize){
 
     for(int i = 0 ; i < arraysize2; i++){
         cout << mergedArray[i] << " ";
+    }
+}
+
+void splitXd(int array[], int arraysize){
+
+    int newSize = arraysize/2;
+    
+    int firstHalf[newSize] = {};
+    int secondHalf[newSize] = {};
+
+    for(int i = 0 ; i < arraysize; i++){
+        if(i < arraysize/2){
+            firstHalf[i] = array[i];
+        }
+        if(i >= arraysize/2){
+            secondHalf[i - arraysize/2] = array[i];
+        }
+    }
+
+    for(int i = 0; i < newSize; i++){
+        cout << firstHalf[i] << " ";
+    }
+
+    cout << endl;
+
+    for(int i = 0; i < newSize; i++){
+        cout << secondHalf[i] << " ";
     }
 }
 
