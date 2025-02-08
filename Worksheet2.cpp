@@ -18,12 +18,14 @@ void leftXd(int array[], int arraysize);
 void rightXd(int array[], int arraysize);
 void mergeXd(int array[], int array1[], int mergedArray[], int arraysize);
 void splitXd(int array[], int arraysize);
+int modeXd(int array[], int arraysize);
+int secondXd(int array[], int arraysize);
 
 
 int main(){
 
     int arraysize = 10;
-    int array[arraysize] = {1,3,6,3,1,3,6,8,3,3};
+    int array[arraysize] = {1,3,6,3,1,7,6,8,3,3};
     int array2[arraysize] = {3,7,3,7,2,1,9,0,7,4};
     int mergedArray[] = {};
     int target = 8;
@@ -48,8 +50,9 @@ int main(){
     //leftXd(array, arraysize);
     //rightXd(array, arraysize);
     //mergeXd(array, array2, mergedArray, arraysize);
-    splitXd(array, arraysize);
-
+    //splitXd(array, arraysize);
+    //cout << "Mode: " << modeXd(array, arraysize);
+    //cout << " Second largest: " << secondXd(array, arraysize);
 
     return 0;
 }
@@ -325,3 +328,43 @@ void splitXd(int array[], int arraysize){
     }
 }
 
+int modeXd(int array[], int arraysize){
+
+    int count;
+    int most = 0;
+    int count2 = 0;
+
+    for(int i = 0; i < arraysize; i++){
+        count = 0;
+        for(int j = 0; j < arraysize; j++){
+            if(array[i] == array[j]){
+                count++;
+                
+            }
+        }
+        if(count > count2){
+                    most = array[i];
+                    count2 = count;
+                }
+    }
+
+    return most;
+}
+
+int secondXd(int array[], int arraysize){
+
+    int largest = array[0];
+    int secondLargest = 0;
+
+    for (int i = 1; i < arraysize; i++) {
+        if (array[i] > largest) {
+            secondLargest = largest;
+            largest = array[i];
+        } else if (array[i] > secondLargest && array[i] != largest) {
+            secondLargest = array[i];
+        }
+    }
+
+
+    return secondLargest;
+}
