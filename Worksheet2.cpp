@@ -24,12 +24,14 @@ void cumulativeSumXd(int array[], int arraysize);
 void insertXd(int array[], int arraysize);
 void deleteXd(int array[], int arraysize);
 void delLeftXd(int array[], int arraysize);
+void delRightXd(int array[], int arraysize);
+void pairsXd(int array[], int arraysize);
 
 
 int main(){
 
     int arraysize = 10;
-    int array[arraysize] = {1,3,6,3,1,7,6,8,1,1};
+    int array[arraysize] = {1,3,6,3,1,7,6,2,1,1};
     int array2[arraysize] = {3,7,3,7,2,1,9,0,7,4};
     int mergedArray[] = {};
     int target = 8;
@@ -50,7 +52,7 @@ int main(){
     //AscendingXd(array, arraysize);
     //DecendingXd(array, arraysize);
     //sortedXd(array, arraysize);
-    //duplicatesXd(array, arraysize); //*****************errors*************  */
+    //duplicatesXd(array, arraysize);
     //leftXd(array, arraysize);
     //rightXd(array, arraysize);
     //mergeXd(array, array2, mergedArray, arraysize);
@@ -60,8 +62,9 @@ int main(){
     //cumulativeSumXd(array, arraysize);
     //insertXd(array, arraysize);     //*******************errors***************** */
     //deleteXd(array, arraysize);
-    delLeftXd(array, arraysize);
-
+    //delLeftXd(array, arraysize);
+    //delRightXd(array,arraysize);
+    //pairsXd(array, arraysize);
 
     return 0;
 }
@@ -241,24 +244,23 @@ void sortedXd(int array[], int arraysize){
     }
 }
 
-void duplicatesXd(int array[], int arraysize){
+void duplicatesXd(int array[], int arraysize) {
 
     bool dupe;
-    int temp[] = {};
 
-    for(int i = 0; i < arraysize; i++){\
+    for (int i = 0; i < arraysize; i++) {
         dupe = false;
-        for(int j = 0 ; j < i; j++){
-            if(array[i] == array[j]){
+        for (int j = 0; j < i; j++) {
+            if (array[i] == array[j]) {
                 dupe = true;
-                
+                break;
             }
         }
+        if (!dupe) {
+            cout << array[i] << " ";
+        }
     }
- 
-    for(int i = 0; i < arraysize; i++){
-        cout << array[i] << " ";
-    }
+    cout << endl;
 }
 
 void leftXd(int array[], int arraysize){
@@ -461,5 +463,35 @@ void delLeftXd(int array[], int arraysize){
 
     for(int i = 0 ; i < arraysize; i++){
         cout << array[i] << " ";
+    }
+}
+
+void delRightXd(int array[], int arraysize){
+    
+    for(int i = 1 ; i <= arraysize; i++){
+        array[arraysize - i] = array[arraysize - 1 - i];
+    }
+
+    
+
+
+    for(int i = 0 ; i < arraysize; i++){
+        cout << array[i] << " ";
+    }
+}
+
+void pairsXd(int array[], int arraysize){
+    
+    int sum2find;
+
+    cout << "Enter sum to find: ";
+    cin >> sum2find;
+
+    for(int i = 0 ; i < arraysize; i++){
+        for(int j = i + 1; j < arraysize; j++){
+            if(array[i] + array[j] == sum2find){
+                cout << "Pair: " << array[i] << " and " << array[j] << endl;
+            }
+        }
     }
 }
