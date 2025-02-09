@@ -21,12 +21,15 @@ void splitXd(int array[], int arraysize);
 int modeXd(int array[], int arraysize);
 int secondXd(int array[], int arraysize);
 void cumulativeSumXd(int array[], int arraysize);
+void insertXd(int array[], int arraysize);
+void deleteXd(int array[], int arraysize);
+void delLeftXd(int array[], int arraysize);
 
 
 int main(){
 
     int arraysize = 10;
-    int array[arraysize] = {1,3,6,3,1,7,6,8,3,3};
+    int array[arraysize] = {1,3,6,3,1,7,6,8,1,1};
     int array2[arraysize] = {3,7,3,7,2,1,9,0,7,4};
     int mergedArray[] = {};
     int target = 8;
@@ -54,7 +57,11 @@ int main(){
     //splitXd(array, arraysize);
     //cout << "Mode: " << modeXd(array, arraysize);
     //cout << " Second largest: " << secondXd(array, arraysize);
-    cumulativeSumXd(array, arraysize);
+    //cumulativeSumXd(array, arraysize);
+    //insertXd(array, arraysize);     //*******************errors***************** */
+    //deleteXd(array, arraysize);
+    delLeftXd(array, arraysize);
+
 
     return 0;
 }
@@ -383,6 +390,73 @@ void cumulativeSumXd(int array[], int arraysize){
         }
         array[i] = sum;
         
+    }
+
+    for(int i = 0 ; i < arraysize; i++){
+        cout << array[i] << " ";
+    }
+}
+
+void insertXd(int array[], int arraysize){
+
+    int num;
+    int index;
+
+    cout << "Enter number to insert: ";
+    cin >> num;
+    cout << "Enter desired index: ";
+    cin >> index;
+    
+
+    int temp;
+    temp = array[index];
+    int newSize = arraysize + 1;
+    int newArray[newSize] = {};
+
+        for (int i = 0; i < index; i++) {
+        newArray[i] = array[i];
+    }
+
+            array[index] = num;
+
+    
+        for(int i = 0 ; i < newSize - index; i++){
+            array[index + i] = array[newSize - 1 - i];
+        }
+
+    
+
+    for(int i = 0; i < arraysize; i++){
+        cout << array[i] << " ";
+    }
+
+}
+
+void deleteXd(int array[], int arraysize){
+
+
+    int del = 0;
+    int position;
+
+    cout << "Number position to delete: ";
+    cin >> position;
+
+    for(int i = 0; i < arraysize; i++){
+        if(i == position){
+            array[i] = del;
+            break;
+        }
+    }
+
+    for(int i = 0 ; i < arraysize; i++){
+        cout << array[i] << " ";
+    }
+}
+
+void delLeftXd(int array[], int arraysize){
+
+    for(int i = 0 ; i < arraysize; i++){
+        array[i] = array[i + 1];
     }
 
     for(int i = 0 ; i < arraysize; i++){
