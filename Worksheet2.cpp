@@ -409,23 +409,12 @@ void insertXd(int array[], int arraysize){
     cout << "Enter desired index: ";
     cin >> index;
     
-
-    int temp;
-    temp = array[index];
-    int newSize = arraysize + 1;
-    int newArray[newSize] = {};
-
-        for (int i = 0; i < index; i++) {
-        newArray[i] = array[i];
-    }
-
-            array[index] = num;
-
-    
-        for(int i = 0 ; i < newSize - index; i++){
-            array[index + i] = array[newSize - 1 - i];
+        for (int i = 0; i < arraysize; i++) {
+            if(i == index){
+                array[i] = num;
+                break;
+            }
         }
-
     
 
     for(int i = 0; i < arraysize; i++){
