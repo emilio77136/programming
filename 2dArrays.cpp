@@ -4,6 +4,7 @@ using namespace std;
 double sumElements(double array[][3], int rows, int cols);
 double avgElements(double array[][3], int rows, int cols);
 double findMax(double array[][3], int rows, int cols);
+double findMin(double array[][3], int rows, int cols);
 
 
 
@@ -14,7 +15,7 @@ int main(){
     double array[rows][cols] = {
         {1.2,1,1},
         {1,1.7,9},
-        {1,1,1.4}
+        {0.4,1,1.4}
         
     };
 
@@ -25,6 +26,10 @@ int main(){
     //cout << endl;
     //cout << findMax(array, rows, cols);
     //cout << endl;
+    cout << findMin(array, rows, cols);
+
+
+
     return 0;
 }
 
@@ -73,4 +78,18 @@ double findMax(double array[][3], int rows, int cols){
             }
         }
     return largest;
+}
+
+double findMin(double array[][3], int rows, int cols){
+
+    double smallest = array[0][0];
+
+        for(int row = 0; row < rows; row++){
+            for(int col = 0; col < cols; col++){
+                if(array[row][col] < smallest){
+                    smallest = array[row][col];
+                }
+            }
+        }
+    return smallest;
 }
