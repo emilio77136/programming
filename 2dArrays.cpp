@@ -8,12 +8,15 @@ double findMin(double array[][3], int rows, int cols);
 int countEven(int array1[][3], int rows, int cols);
 int countOdd(int array1[][3], int rows, int cols);
 bool searchElement(int array1[][3], int rows, int cols, int target);
+void replaceElement(int array1[][3], int rows, int cols, int oldVal, int newVal);
 
 
 int main(){
 
     const int rows = 3;
     const int cols = 3;
+    int oldVal = 5;
+    int newVal = 9;
     double array[rows][cols] = {
         {1.2,1,1},
         {1,1.7,9},
@@ -33,9 +36,9 @@ int main(){
     //cout << findMin(array, rows, cols);
     //cout << countEven(array1, rows, cols);
     //cout << countOdd(array1, rows, cols);
-    cout << searchElement(array1, rows, cols, target);
+    //cout << searchElement(array1, rows, cols, target);
+    //replaceElement(array1, rows, cols, oldVal, newVal);
 
-    
     return 0;
 }
 
@@ -145,4 +148,22 @@ bool searchElement(int array1[][3], int rows, int cols, int target){
     }
     
     return found;
+}
+
+void replaceElement(int array1[][3], int rows, int cols, int oldVal, int newVal){
+
+    for(int row = 0; row < rows; row++){
+        for(int col = 0; col < cols; col++){
+            if(array1[row][col] == oldVal){
+                array1[row][col] = newVal;
+            }   
+        }
+    }
+
+    for(int row = 0; row < rows; row++){
+        for(int col = 0; col < cols; col++){
+            cout << array1[row][col] << " ";
+        }
+        cout << endl;
+    }
 }
