@@ -7,7 +7,7 @@ double findMax(double array[][3], int rows, int cols);
 double findMin(double array[][3], int rows, int cols);
 int countEven(int array1[][3], int rows, int cols);
 int countOdd(int array1[][3], int rows, int cols);
-
+bool searchElement(int array1[][3], int rows, int cols, int target);
 
 
 int main(){
@@ -20,24 +20,22 @@ int main(){
         {0.4,1,1.4}
         
     };
-
     int array1[rows][cols] = {
         {1,2,3},
-        {4,5,6},
+        {0,5,6},
         {7,8,9},
     };
+    int target = 4;
 
     //cout << sumElements(array, rows, cols);
-    //cout << endl;
     //cout << avgElements(array, rows, cols);
-    //cout << endl;
     //cout << findMax(array, rows, cols);
-    //cout << endl;
     //cout << findMin(array, rows, cols);
-    //cout << endl;
     //cout << countEven(array1, rows, cols);
-    cout << countOdd(array1, rows, cols);
+    //cout << countOdd(array1, rows, cols);
+    cout << searchElement(array1, rows, cols, target);
 
+    
     return 0;
 }
 
@@ -130,4 +128,21 @@ int countOdd(int array1[][3], int rows, int cols){
         }
 
     return oddCount;
+}
+
+bool searchElement(int array1[][3], int rows, int cols, int target){
+
+    bool found = false;
+
+    for(int row = 0; row < rows; row++){
+        for(int col = 0; col < cols; col++){
+            if(array1[row][col] == target){
+                found = true;
+                return found;
+                
+            }
+        }
+    }
+    
+    return found;
 }
