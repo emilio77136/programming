@@ -5,6 +5,7 @@ double sumElements(double array[][3], int rows, int cols);
 double avgElements(double array[][3], int rows, int cols);
 double findMax(double array[][3], int rows, int cols);
 double findMin(double array[][3], int rows, int cols);
+double countEven(double array[][3], int rows, int cols);
 
 
 
@@ -26,8 +27,9 @@ int main(){
     //cout << endl;
     //cout << findMax(array, rows, cols);
     //cout << endl;
-    cout << findMin(array, rows, cols);
-
+    //cout << findMin(array, rows, cols);
+    //cout << endl;
+    cout << countEven(array, rows, cols);
 
 
     return 0;
@@ -92,4 +94,19 @@ double findMin(double array[][3], int rows, int cols){
             }
         }
     return smallest;
+}
+
+double countEven(double array[][3], int rows, int cols){
+
+    int evenCount = 0;
+
+        for(int row = 0; row < rows; row++){
+            for(int col = 0; col < cols; col++){
+                if(array[row][col] % 2 == 0){
+                    evenCount++;
+                }
+            }
+        }
+
+    return evenCount;
 }
