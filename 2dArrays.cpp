@@ -3,6 +3,7 @@ using namespace std;
 
 double sumElements(double array[][3], int rows, int cols);
 double avgElements(double array[][3], int rows, int cols);
+double findMax(double array[][3], int rows, int cols);
 
 
 
@@ -12,19 +13,18 @@ int main(){
     const int cols = 3;
     double array[rows][cols] = {
         {1.2,1,1},
-        {1,1,1},
+        {1,1.7,9},
         {1,1,1.4}
         
     };
 
 
-    cout << sumElements(array, rows, cols);
-
-    cout << endl;
-
-    cout << avgElements(array, rows, cols);
-   
-
+    //cout << sumElements(array, rows, cols);
+    //cout << endl;
+    //cout << avgElements(array, rows, cols);
+    //cout << endl;
+    //cout << findMax(array, rows, cols);
+    //cout << endl;
     return 0;
 }
 
@@ -61,4 +61,16 @@ double avgElements(double array[][3], int rows, int cols){
 
 }
 
+double findMax(double array[][3], int rows, int cols){
 
+    double largest = array[0][0];
+
+        for(int row = 0; row < rows; row++){
+            for(int col = 0; col < cols; col++){
+                if(array[row][col] > largest){
+                    largest = array[row][col];
+                }
+            }
+        }
+    return largest;
+}
